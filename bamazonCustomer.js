@@ -53,7 +53,6 @@ function selectProduct(){
         }
     ]).then(function(answers){
         var query = "SELECT * FROM products WHERE id = ?"
-        console.log(answers.id);
         connection.query(query, [answers.id], function(err, res){
             if(res.length < 1){
                 console.log("Please enter a valid ID")
